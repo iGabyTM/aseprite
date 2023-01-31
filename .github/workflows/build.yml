@@ -55,6 +55,11 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Package
+        path: build/**
     - name: Running C++ Tests
       shell: bash
       run: |
