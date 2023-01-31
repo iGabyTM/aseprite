@@ -7,7 +7,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest]
-        build_type: [RelWithDebInfo, Debug]
+        build_type: [RelWithDebInfo]
         enable_ui: [off]
     steps:
     - uses: actions/checkout@v2
@@ -55,7 +55,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Package
-        path: build/**
+        path: build/bin/aseprite/**
     - name: Running C++ Tests
       shell: bash
       run: |
